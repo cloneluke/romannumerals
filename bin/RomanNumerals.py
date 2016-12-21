@@ -14,31 +14,34 @@ class RomanNumerals:
         #any other strings not allowed      
         if(isinstance(inputNumber, str)):
             try:
-                inputNumber = float(inputNumber)
-                strInputNumber = str(inputNumber)
+                floatInputNumber = float(inputNumber)
+                strInputNumber = str(floatInputNumber)
                 print("converted input:" + strInputNumber)
             except ValueError:
                 raise RuntimeError("Non-number passed in, please re-try with whole number")
          
+        floatInputNumber = float(inputNumber)
         #after string handling check if its a whole number         
-        if(inputNumber % 1 != 0):
+        if(floatInputNumber % 1 != 0):
             raise RuntimeError("Decimal passed in, please re-try with whole number")
         #after whole number handling, check if its greater than zero
-        if(inputNumber < 1):
+        if(floatInputNumber < 1):
             raise RuntimeError("Input number has to be greater than or equal to one")
         
-        strInputNumber = str(inputNumber)   
-        
+        strInputNumber = str(int(floatInputNumber))          
         return strInputNumber
-        
-    
+           
     def convert_number_to_numeral(self, inputNumber):
         
-        strInputNumber = self.error_handle_input_postive_whole_numbers_only(inputNumber)  
-                  
+        #call method to validate input
+#         print("raw input: ")
+#         print(inputNumber)
+        strInputNumber = self.error_handle_input_postive_whole_numbers_only(inputNumber)   
+#         print("ready input: ")
+#         print(strInputNumber) 
         inputNumberLength = len(strInputNumber)
-        
-        print("input length: " + str(inputNumberLength))        
+#         
+#         print("input length: " + str(inputNumberLength))        
         
         if(inputNumberLength == 1):
             print("single digit")
