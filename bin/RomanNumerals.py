@@ -4,7 +4,9 @@
 
 class RomanNumerals:
     
-    def convert_numeral_to_number(self, RomanString):
-        print(RomanString)
+    def convert_number_to_numeral(self, inputNumber):
+        print(inputNumber)
         
-        return 1
+        
+        
+        return "I"
