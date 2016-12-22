@@ -10,10 +10,10 @@ class TestRomanNumerals(unittest.TestCase):
         pass
     
     def testReturnNumeralIFromNumberOne(self):
-        self.assertEqual(self.romanInstance.convert_number_to_numeral(1), "I", "I (string) not returned")
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(1), "I", "Not expected Numeral String")
      
     def testReturnNumeralIFromNumberOneString(self):
-        self.assertEqual(self.romanInstance.convert_number_to_numeral("1"), "I", "I (string) not returned") 
+        self.assertEqual(self.romanInstance.convert_number_to_numeral("1"), "I", "Not expected Numeral String")
       
     def testReturnNumeralIFromNumberOneStringWithChar(self):
         try:
@@ -23,7 +23,7 @@ class TestRomanNumerals(unittest.TestCase):
             print(e.args[0])
       
     def testReturnNumeralIFromNumberOneStringDecimalWhole(self):
-        self.assertEqual(self.romanInstance.convert_number_to_numeral("1.0"), "I", "I (string) not returned")         
+        self.assertEqual(self.romanInstance.convert_number_to_numeral("1.0"), "I", "Not expected Numeral String")        
          
     def testReturnMessageIfInputLetter(self):
         try:
@@ -102,19 +102,19 @@ class TestRomanNumerals(unittest.TestCase):
         self.assertEqual(self.romanInstance.convert_number_to_numeral(2), "II", "Not expected Numeral String")
     
     def testOnesPositionNine(self):
-        self.assertEqual(self.romanInstance.convert_number_to_numeral(9), "IX", "I (string) not returned") 
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(9), "IX", "Not expected Numeral String")
     
     def testOnesPositionEight(self):
-        self.assertEqual(self.romanInstance.convert_number_to_numeral(8), "VIII", "I (string) not returned")
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(8), "VIII", "Not expected Numeral String")
     
     def testOnesPositionSix(self):
-        self.assertEqual(self.romanInstance.convert_number_to_numeral(6), "VI", "I (string) not returned")  
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(6), "VI", "Not expected Numeral String")
     
     def testOnesPositionFour(self):
-        self.assertEqual(self.romanInstance.convert_number_to_numeral("4"), "IV", "Not expected Numeral String")                    
+        self.assertEqual(self.romanInstance.convert_number_to_numeral("4"), "IV", "Not expected Numeral String")                
         
     def testReturnNumeralFromSingleDigitsNumber(self):
-        self.assertEqual(self.romanInstance.convert_number_to_numeral(1), "I", "I (string) not returned")        
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(1), "I", "Not expected Numeral String")      
 
 
 if __name__ == "__main__":
