@@ -1,6 +1,5 @@
 import configparser
 
-
 class RomanNumerals:
     
     finalNumeralString =""
@@ -11,7 +10,7 @@ class RomanNumerals:
         self.numeralConfig.read("../conf/NumeralMapping.conf")   
     
     def error_handle_input_postive_whole_numbers_only(self, inputNumber):
-        #Handle if input is string, we will allow if its a postive whole number
+        #Handle if input is string, we will allow if its a positive whole number
         #any other strings not allowed      
         if(isinstance(inputNumber, str)):
             try:
@@ -28,10 +27,10 @@ class RomanNumerals:
         #after whole number handling, check if its greater than zero
         if(floatInputNumber < 1):
             raise RuntimeError("Input number has to be greater than or equal to one")
-        
+        #limit the maximum due to roman numeral rules
         if(floatInputNumber > 3999):
             raise RuntimeError("Input number has to be less than 4000 due to Roman Numeral limitations")
-        
+        #convert return value to int then string for length calc later
         strInputNumber = str(int(floatInputNumber))          
         return strInputNumber
            
