@@ -1,7 +1,5 @@
 import unittest
-import sys
 from bin.RomanNumerals import RomanNumerals
-
 
 class TestRomanNumerals(unittest.TestCase):
     

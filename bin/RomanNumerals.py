@@ -66,17 +66,17 @@ class RomanNumerals:
         return self.finalNumeralString
         
     def build_place(self, inputOnesSpotNumber, place_config_string):
-        #build prefix I for 4 and 9
+        #build prefix ones for 4 and 9
         if(inputOnesSpotNumber == 4 or inputOnesSpotNumber == 9):
             self.finalNumeralString = self.finalNumeralString + self.numeralConfig[place_config_string]["1"]
-        #build out V for 4 thru 8
+        #build out fives for 4 thru 8
         if(inputOnesSpotNumber > 3 and inputOnesSpotNumber < 9):
             self.finalNumeralString = self.finalNumeralString + self.numeralConfig[place_config_string]["5"]
-        #build out I's for 1-3, 6-8, excluding 4 and 9
+        #build out ones for 1-3, 6-8, excluding 4 and 9
         if(inputOnesSpotNumber < 4 or inputOnesSpotNumber > 5 and inputOnesSpotNumber % 5 != 4):
             for i in range(inputOnesSpotNumber % 5):
                 self.finalNumeralString = self.finalNumeralString + self.numeralConfig[place_config_string]["1"]
-        #if it's 9 put the X on the end
+        #if it's 9 put the 10s on the end
         if(inputOnesSpotNumber == 9):
             self.finalNumeralString = self.finalNumeralString + self.numeralConfig[place_config_string]["10"]
         return
