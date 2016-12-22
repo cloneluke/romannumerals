@@ -80,5 +80,5 @@ class RomanNumerals:
         if(inputOnesSpotNumber == 9):
             self.finalNumeralString = self.finalNumeralString + self.numeralConfig[place_config_string]["10"]
         return
-       
-    #TODO - add calling from command line
+    
+    
