@@ -8,7 +8,8 @@ class RomanNumerals:
     
     def __init__(self):
         self.numeralConfig = configparser.ConfigParser()
-        self.numeralConfig.read(os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'conf')) + "\\NumeralMapping.conf")   
+        #setup config by navigating to config path and normalizing to be platform independent
+        self.numeralConfig.read(os.path.normpath(os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'conf')) + "/NumeralMapping.conf"))   
     
     def error_handle_input_postive_whole_numbers_only(self, inputNumber):
         #Handle if input is string, we will allow if its a positive whole number
