@@ -1,4 +1,10 @@
 import unittest
+import sys
+import os
+
+#append to sys path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..')))
+
 from bin.RomanNumerals import RomanNumerals
 
 class TestRomanNumerals(unittest.TestCase):
