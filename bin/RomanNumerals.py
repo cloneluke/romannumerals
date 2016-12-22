@@ -30,7 +30,7 @@ class RomanNumerals:
             raise RuntimeError("Input number has to be greater than or equal to one")
         
         if(floatInputNumber > 3999):
-            raise RuntimeError("Input number has to be less than 4000")
+            raise RuntimeError("Input number has to be less than 4000 due to Roman Numeral limitations")
         
         strInputNumber = str(int(floatInputNumber))          
         return strInputNumber

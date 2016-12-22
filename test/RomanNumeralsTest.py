@@ -71,7 +71,7 @@ class TestRomanNumerals(unittest.TestCase):
         try:
             self.romanInstance.convert_number_to_numeral(4000)
         except RuntimeError as e:
-            self.assertEqual(e.args[0], "Input number has to be less than 4000", "Number greater than 3999 allowed through")  
+            self.assertEqual(e.args[0], "Input number has to be less than 4000 due to Roman Numeral limitations", "Number greater than 3999 allowed through")  
             print(e.args[0])    
      
     def testReturnMessageIfEqualMaximumAllowableNumeral(self):
