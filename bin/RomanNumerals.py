@@ -54,19 +54,22 @@ class RomanNumerals:
 #         print("input length: " + str(inputNumberLength))        
         
         if(inputNumberLength == 1):
-            tens_spot = self.build_tens_place(int(strInputNumber[0]))
-        if(inputNumberLength == 1):
+            ones_spot = self.build_ones_place(int(strInputNumber[0]))
         return self.finalNumeralString
         
-    def build_tens_place(self, inputTensSpotNumber):
+    def build_ones_place(self, inputTensSpotNumber):
         print(inputTensSpotNumber)
+        #build prefix I for 4 and 9
         if(inputTensSpotNumber == 4 or inputTensSpotNumber == 9):
             self.finalNumeralString = self.finalNumeralString + "I"
+        #build out V for 4 thru 8
         if(inputTensSpotNumber > 3 and inputTensSpotNumber < 9):
             self.finalNumeralString = self.finalNumeralString + "V"
+        #build out I's for 1-3, 6-8, excluding 4 and 9
         if(inputTensSpotNumber < 4 or inputTensSpotNumber > 5 and inputTensSpotNumber % 5 != 4):
             for i in range(inputTensSpotNumber % 5):
                 self.finalNumeralString = self.finalNumeralString + "I"
+        #if it's 9 put the X on the end
         if(inputTensSpotNumber == 9):
             self.finalNumeralString = self.finalNumeralString + "X"
 

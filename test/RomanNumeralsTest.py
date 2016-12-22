@@ -99,7 +99,7 @@ class TestRomanNumerals(unittest.TestCase):
         self.assertEqual(self.romanInstance.convert_number_to_numeral(6), "VI", "I (string) not returned")  
     
     def testOnesPositionFour(self):
-        self.assertEqual(self.romanInstance.convert_number_to_numeral(4), "IV", "Not expected Numeral String")                    
+        self.assertEqual(self.romanInstance.convert_number_to_numeral("4"), "IV", "Not expected Numeral String")                    
         
     def testReturnNumeralFromSingleDigitsNumber(self):
         self.assertEqual(self.romanInstance.convert_number_to_numeral(1), "I", "I (string) not returned")        
