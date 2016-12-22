@@ -73,15 +73,27 @@ class TestRomanNumerals(unittest.TestCase):
         except RuntimeError as e:
             self.assertEqual(e.args[0], "Input number has to be less than 4000", "Number greater than 3999 allowed through")  
             print(e.args[0])    
-#     
-#     def testReturnMessageIfEqualMaximumAllowableNumeral(self):
-#         self.assertEqual(self.romanInstance.convert_number_to_numeral(3999), "I", "I (string) not returned")     
+     
+    def testReturnMessageIfEqualMaximumAllowableNumeral(self):
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(3999), "MMMCMXCIX", "Not expected Numeral String")   
+
+    def testHundredsPositionTwoTen(self):
+        self.assertEqual(self.romanInstance.convert_number_to_numeral("379.0000"), "CCCLXXIX", "Not expected Numeral String")
     
-#     def testHundredsPosition(self):
-#         self.assertEqual(self.romanInstance.convert_number_to_numeral(720), "I", "I (string) not returned") 
+    def testThousandsPositionTwoEightFourEight(self):
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(2848), "MMDCCCXLVIII", "Not expected Numeral String")   
+
+    def testHundredsPositionTwoTen(self):
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(210), "CCX", "Not expected Numeral String")   
     
-#     def testTensPosition(self):
-#         self.assertEqual(self.romanInstance.convert_number_to_numeral(68), "VIII", "Not expected Numeral String") 
+    def testHundredsPosition(self):
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(720), "DCCXX", "Not expected Numeral String") 
+    
+    def testTensPositionSixtyEight(self):
+        self.assertEqual(self.romanInstance.convert_number_to_numeral(68), "LXVIII", "Not expected Numeral String") 
+    
+    def testTensPositionTwentyFive(self):
+        self.assertEqual(self.romanInstance.convert_number_to_numeral("25"), "XXV", "Not expected Numeral String") 
 
     def testOnesPositionThree(self):
         self.assertEqual(self.romanInstance.convert_number_to_numeral(3), "III", "Not expected Numeral String")                  
