@@ -8,9 +8,7 @@ class RomanNumerals:
     
     def __init__(self):
         self.numeralConfig = configparser.ConfigParser()
-        self.numeralConfig.read("../conf/NumeralMapping.conf")
-        print(self.numeralConfig['NUMERAL_MAPPING_ONES']["1"])
-        
+        self.numeralConfig.read("../conf/NumeralMapping.conf")   
     
     def error_handle_input_postive_whole_numbers_only(self, inputNumber):
         #Handle if input is string, we will allow if its a postive whole number
@@ -38,19 +36,26 @@ class RomanNumerals:
         return strInputNumber
            
     def convert_number_to_numeral(self, inputNumber):
+        #instantiate the class string on every method call
         self.finalNumeralString = ""
+        #enforce some input rules
         strInputNumber = self.error_handle_input_postive_whole_numbers_only(inputNumber)   
+        #setup length of input
         inputNumberLength = len(strInputNumber)
         inputNumber = int(strInputNumber)
+        #single digit < 10
         if(inputNumberLength == 1):
             self.build_place(int(strInputNumber[0]), "NUMERAL_MAPPING_ONES")
+        #double digit < 100
         elif(inputNumberLength == 2):
             self.build_place(int(strInputNumber[0]), "NUMERAL_MAPPING_TENS")
             self.build_place(int(strInputNumber[1]), "NUMERAL_MAPPING_ONES")
+        #triple digit < 1000
         elif(inputNumberLength == 3):
             self.build_place(int(strInputNumber[0]), "NUMERAL_MAPPING_HUNDREDS")
             self.build_place(int(strInputNumber[1]), "NUMERAL_MAPPING_TENS")
             self.build_place(int(strInputNumber[2]), "NUMERAL_MAPPING_ONES")
+        #anything above 999 but below max which is enforced above
         elif(inputNumberLength == 4):
             self.build_place(int(strInputNumber[0]), "NUMERAL_MAPPING_THOUSANDS")
             self.build_place(int(strInputNumber[1]), "NUMERAL_MAPPING_HUNDREDS")
@@ -74,6 +79,5 @@ class RomanNumerals:
         if(inputOnesSpotNumber == 9):
             self.finalNumeralString = self.finalNumeralString + self.numeralConfig[place_config_string]["10"]
         return
-    
-    
+       
     #TODO - add calling from command line

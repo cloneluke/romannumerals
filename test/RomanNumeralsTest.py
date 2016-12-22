@@ -77,7 +77,7 @@ class TestRomanNumerals(unittest.TestCase):
     def testReturnMessageIfEqualMaximumAllowableNumeral(self):
         self.assertEqual(self.romanInstance.convert_number_to_numeral(3999), "MMMCMXCIX", "Not expected Numeral String")   
 
-    def testHundredsPositionTwoTen(self):
+    def testHundredsPositionThreeSevenNineStr(self):
         self.assertEqual(self.romanInstance.convert_number_to_numeral("379.0000"), "CCCLXXIX", "Not expected Numeral String")
     
     def testThousandsPositionTwoEightFourEight(self):
