@@ -59,7 +59,9 @@ class RomanNumerals:
             self.build_place(int(strInputNumber[0]), "NUMERAL_MAPPING_THOUSANDS")
             self.build_place(int(strInputNumber[1]), "NUMERAL_MAPPING_HUNDREDS")
             self.build_place(int(strInputNumber[2]), "NUMERAL_MAPPING_TENS")
-            self.build_place(int(strInputNumber[3]), "NUMERAL_MAPPING_ONES")           
+            self.build_place(int(strInputNumber[3]), "NUMERAL_MAPPING_ONES")
+        
+        print(self.finalNumeralString)           
             
         return self.finalNumeralString
         
