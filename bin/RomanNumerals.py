@@ -3,6 +3,8 @@ import configparser
 
 class RomanNumerals:
     
+    finalNumeralString =""
+    
     def __init__(self):
         numeralConfig = configparser.ConfigParser()
         numeralConfig.read("../conf/NumeralMapping.conf")
@@ -28,6 +30,9 @@ class RomanNumerals:
         if(floatInputNumber < 1):
             raise RuntimeError("Input number has to be greater than or equal to one")
         
+        if(floatInputNumber > 3999):
+            raise RuntimeError("Input number has to be less than 4000")
+        
         strInputNumber = str(int(floatInputNumber))          
         return strInputNumber
            
@@ -40,10 +45,32 @@ class RomanNumerals:
 #         print("ready input: ")
 #         print(strInputNumber) 
         inputNumberLength = len(strInputNumber)
+        inputNumber = int(strInputNumber)
+#         print(strInputNumber[0])
+#         print(strInputNumber[1])
+#         print(strInputNumber[2])
+#         print(strInputNumber[3])
 #         
 #         print("input length: " + str(inputNumberLength))        
         
         if(inputNumberLength == 1):
-            print("single digit")
+            tens_spot = self.build_tens_place(int(strInputNumber[0]))
+        if(inputNumberLength == 1):
+        return self.finalNumeralString
         
-        return "I"
+    def build_tens_place(self, inputTensSpotNumber):
+        print(inputTensSpotNumber)
+        if(inputTensSpotNumber == 4 or inputTensSpotNumber == 9):
+            self.finalNumeralString = self.finalNumeralString + "I"
+        if(inputTensSpotNumber > 3 and inputTensSpotNumber < 9):
+            self.finalNumeralString = self.finalNumeralString + "V"
+        if(inputTensSpotNumber < 4 or inputTensSpotNumber > 5 and inputTensSpotNumber % 5 != 4):
+            for i in range(inputTensSpotNumber % 5):
+                self.finalNumeralString = self.finalNumeralString + "I"
+        if(inputTensSpotNumber == 9):
+            self.finalNumeralString = self.finalNumeralString + "X"
+
+#             if 
+#             for i in range(int(strInputNumber[0])-5) 
+
+        
